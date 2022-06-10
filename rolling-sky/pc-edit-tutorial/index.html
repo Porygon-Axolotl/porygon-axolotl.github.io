@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>How to make RS edits</title>
+<style>@font-face {font-family: 'regular';src: url("https://sqdldev.github.io/rolling-sky/fonts/sen/regular.ttf");}*{font-family:regular !important;}</style>
+<style>*{scroll-behavior:smooth;scroll-margin-top:30pt;}</style>
+<a href="#" class="btt">Back to Top</a><style>.btt{ background-color: #f2bd58; box-shadow: 0px 7px 0px 0px #c38b3a; -webkit-box-shadow: 0px 7px 0px 0px #c38b3a; -moz-box-shadow: 0px 7px 0px 0px #c38b3a; border-radius: 10pt; border: none; font-size: 12pt; padding: 6pt 15pt; position: fixed; right: 0; bottom: 2px; margin: 15pt; z-index: 500; transition: 0.15s; color: black; text-decoration: none;}.btt:active{ background-color: #f2bd58; box-shadow: 0px 5px 0px 0px #c38b3a; -webkit-box-shadow: 0px 5px 0px 0px #c38b3a; -moz-box-shadow: 0px 5px 0px 0px #c38b3a; right: 0; bottom: 0; transition: 0.15s;}</style>
+<body style="padding: 10pt 30pt;">
+<br/>
+
+</p>
+<p align="center"><font size="5" style="font-size: 20pt"><b>How to
+make Rolling Sky edits (Part V finished)</b></font></p>
+<p align="center"><font size="5" style="font-size: 20pt"><b>(PC)</b></font></p>
+<p align="center"><br/>
+<br/>
+
+</p>
+<p align="left"><font size="4" style="font-size: 15pt"><b>Sections:</b></font></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/edit-tutorial/#IDs"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">I: Understanding item IDs</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/edit-tutorial/#geobuffers"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">II: Understanding Geobuffers</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/edit-tutorial/#routes"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">III: Custom routes</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/edit-tutorial/#themes1"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">IV: Custom themes (I)</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/edit-tutorial/#themes2"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">V: Custom themes (II)</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/edit-tutorial/#music"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">VI: Custom Music</span></font></a></p>
+<p align="left"><br/>
+<br/>
+
+</p>
+<p align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>Requirements:</b></font></p>
+<p align="left" style="line-height: 100%"><a target="_blank" href="https://drive.google.com/file/d/1a3MXJ0IE76RJZYZzpfVNcdiMUtplYA1z/view?usp=sharing"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">Rolling
+Sky</span></font></a></p>
+<p align="left" style="line-height: 100%"><a target="_blank" href="https://notepad-plus-plus.org/"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">Notepad
+++</span></font></a></p>
+<p align="left" style="line-height: 100%"><a target="_blank" href="https://github.com/SeriousCache/UABE/releases/"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">UABE</span></font></a></p>
+<p align="left" style="line-height: 100%"><a target="_blank" href="https://github.com/dnSpy/dnSpy/releases/"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">dnSpy</span></font></a> (you can also use Visual Studio)</p>
+<p align="left" style="line-height: 100%"><a target="_blank" href="https://unity3d.com/get-unity/download/archive"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">Unity
+2018 or lower</span></font></a></p>
+<p align="left" style="line-height: 100%"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><a target="_blank" href="https://www.mapeditor.org/">Tiled</a>
+(Optional)</span></font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">A
+tileset for Tiled (Optional) (You will have to find this yourself)</font></p>
+<p align="left" style="line-height: 100%"><br/>
+<br/>
+
+</p>
+<p id="IDs" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>I:
+Understanding item IDs</b></font></p>
+<p><br/>
+<br/>
+
+</p>
+<h3 class="western" style="font-weight: normal"><font size="4" style="font-size: 14pt">How
+they work:</font></h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">Item IDs are numbers
+corresponding to an object or obstacle in a level. </font>
+</h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">Example:</font></h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">0 = air</font></h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">1 = floor </font>
+</h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">2 = jump pad</font></h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">3 = glass</font></h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">9 = stomper</font></h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">You can find a list of all
+item IDs <a target="_blank" href="https://sqdldev.github.io/rolling-sky/obstacle-ids/">here</a> or <a target="_blank" href="https://docs.google.com/document/d/1wjrcXSk6uXE27lBXjL_vbrf3KZt9yZlD5UsOTnqXecc/edit">here</a>.</font></h3>
+<h3 class="western" align="left" style="line-height: 100%"><br/>
+<br/>
+
+</h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="4" style="font-size: 14pt">Level Formation:</font></h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">A Rolling Sky level is made up
+by a lot of item IDs on a text file. </font>
+</h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">Example:</font></h3>
+
+<iframe src="https://sqdldev.github.io/rolling-sky/all-about-rolling-sky/tryityourself/level_basics.html" style="width: 685pt;height: 500pt;"></iframe>
+
+</p>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">(Demo made by sqdldev)</font></h3>
+<p><br/>
+<br/>
+
+</p>
+<h3 class="western" style="font-weight: normal"><font size="4" style="font-size: 14pt">Loader
+Tiles:</font></h3>
+<h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
+<font size="3" style="font-size: 12pt">Loader tiles divide a level
+into segments. Segments should be 7-15 lines long for a level to
+load. Tiles 181 through 188 are loader tiles.</font></h3>
+<p align="left" style="line-height: 100%"><br/>
+<br/>
+
+</p>
+<p id="geobuffers" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>II:
+Understanding Geobuffers</b></font></p>
+<p><br/>
+<br/>
+
+</p>
+<h3 class="western" style="font-weight: normal"><font size="4" style="font-size: 14pt">What
+are they?:</font></h3>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">Geobuffers
+are the way Rolling Sky knows how to render models and other effects.
+Geobuffers include how many and what type of object to render.</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">Example:</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">17,4,z
+= riser</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">18,4,z
+= floater</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">Here is a list</font></p>
+<p><br/>
+<font size="4" style="font-size: 14pt">How they work:</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">Geobuffers
+work in a x,y,z format</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">x
+= the object/model and how its going to be displayed.</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">y
+= the type of geobuffer</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">z
+= maximum amount of the object in a segment</font></p>
+<a target="_blank" href="https://sqdldev.github.io/rolling-sky/geobuffer-ids/"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">Here</span></font></a> you can find a list of all geobuffers.</p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">Note:
+Most geobuffers use geobuffer type 4 but some use other geobuffer
+types. You can check your geobuffer type here: 
+
+<iframe src="https://sqdldev.github.io/rolling-sky/buffer-inspector/" style="width: 685pt;height: 500pt;"></iframe>
+
+</font>
+</p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">(Inspector
+made by sqdldev)</font></p>
+<p><font size="3" style="font-size: 12pt">
+<br/>
+
+<font size="4" style="font-size: 14pt">How
+to edit them:</font></font></p>
+<p><font size="3" style="font-size: 12pt">1. Open UABE</font></p>
+<p><font size="3" style="font-size: 12pt">2. Select file &gt; open</font></p>
+<p><font size="3" style="font-size: 12pt">3. Go to your Rolling Sky
+installation folder &gt; Rolling Sky_Data</font></p>
+<p><font size="3" style="font-size: 12pt">4. Select the
+resources.assets file and open it</font></p>
+<p><font size="3" style="font-size: 12pt">5. Go to view &gt; search
+by name</font></p>
+<p><font size="3" style="font-size: 12pt">6. Search the following
+“geoBufferX” (X means the level id of the level geobuffer you
+want to edit. <a target="_blank" href="https://sqdldev.github.io/rolling-sky/level-names/">Here is a list</a>)</font></p>
+<p><font size="3" style="font-size: 12pt">7. Select plugins &gt;
+export to .txt</font></p>
+<p><font size="3" style="font-size: 12pt">8. Save the geobuffer file
+somewhere you can remember</font></p>
+<p><font size="3" style="font-size: 12pt">9. Open Notepad ++ (dont
+close UABE)</font></p>
+<p><font size="3" style="font-size: 12pt">10. Edit the geobuffer and
+save it (you can save the file by clicking Ctrl and S at the same
+time)</font></p>
+<p><font size="3" style="font-size: 12pt">11. Go back to UABE and
+select plugin &gt; import from .txt</font></p>
+<p><font size="3" style="font-size: 12pt">12. Select the edited
+geobuffer</font></p>
+<p><font size="3" style="font-size: 12pt">13. Save the
+resources.assets by clicking file &gt; save</font></p>
+<p><font size="3" style="font-size: 12pt">Note: UABE wont let you
+save the resources.assets in its original location while its open.
+You have to save it somewhere else and close UABE. After closing UABE
+you can move the resources.assets Rolling Sky installation &gt;
+Rolling Sky_DATA</font></p>
+
+<p align="left" style="line-height: 100%"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">Warning:
+</span><b>DO NOT EDIT THE FOLLOWING GEOBUFFERS in geoBuffer0.txt
+</b><span style="font-weight: normal">(unless you know what you are
+doing)</span></font></p>
+<p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;">0,0,100<br>1,0,20<br>2,0,15<br>3,0,15<br>4,0,5<br>5,0,10<br>6,0,80<br>7,0,15<br>8,0,10<br>9,0,15<br>10,0,45<br>11,0,30<br>12,0,90<br>13,0,70<br>14,0,120<br>30,4,10<br>44,4,20<br>62,4,5<br>64,4,10<br>70,2,10<br>71,2,2<br>72,2,10<br>73,2,15<br>77,5,40<br>78,5,50<br>80,9,60<br>81,9,60<br>82,9,45<br>83,9,45<br>84,9,20<br>85,9,20<br>86,9,60<br>87,9,40<br>88,9,10<br>89,9,40<br>90,9,40<br>91,9,40<br>92,9,40<br>93,9,40<br>94,9,40<br>95,9,40<br>96,9,40<br>97,9,40<br>98,9,40<br>99,9,40<br>100,9,40<br>101,8,650<br>103,10,1<br>104,10,2<br>105,6,1<br>107,10,1<br>108,6,1<br>109,6,1<br>112,1,60<br>114,10,50<br>217,6,10<br>218,6,3<br>233,9,40<br>364,10,1<br>834,6,20<br></p>
+<br>
+
+</p>
+<p id="routes" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>III:
+Custom routes</b></font></p>
+<p><br/>
+<br/>
+
+</font>
+</p>
+<p><font size="3" style="font-size: 12pt">1. Open UABE</font></p>
+<p><font size="3" style="font-size: 12pt">2. Select file &gt; open</font></p>
+<p><font size="3" style="font-size: 12pt">3. Go to your Rolling Sky
+installation folder &gt; Rolling Sky_Data</font></p>
+<p><font size="3" style="font-size: 12pt">4. Select the
+resources.assets file and open it</font></p>
+<p><font size="3" style="font-size: 12pt">5. Go to view &gt; search
+by name</font></p>
+<p><font size="3" style="font-size: 12pt">6. Search the following
+“levelX” (X means the level id of the level you
+want to edit. <a target="_blank" href="https://sqdldev.github.io/rolling-sky/level-names/">Here is a list</a>)</font></p>
+<p><font size="3" style="font-size: 12pt">7. Select plugins &gt;
+export to .txt</font></p>
+<p><font size="3" style="font-size: 12pt">8. Save the level file
+somewhere you can remember</font></p>
+<p><font size="3" style="font-size: 12pt">9. Open Notepad ++ (dont
+close UABE)</font></p>
+<p><font size="3" style="font-size: 12pt">10. Edit the level and
+save it (you can use this level as an example for what you can and cannot do)</font></p>
+<p><font size="3" style="font-size: 12pt">11. Go back to UABE and
+select plugin &gt; import from .txt</font></p>
+<p><font size="3" style="font-size: 12pt">12. Select the edited
+level</font></p>
+<p><font size="3" style="font-size: 12pt">13. Save the
+resources.assets by clicking file &gt; save</font></p>
+<p><font size="3" style="font-size: 12pt">Note: Remember you have to add loader tiles every 7-15 lines</font></p>
+<p><font size="3" style="font-size: 12pt">Note: UABE wont let you	save the resources.assets in its original location while its open.
+You have to save it somewhere else and close UABE. After closing UABE
+you can move the resources.assets Rolling Sky installation &gt;
+Rolling Sky_DATA</font></p>
+<br>
+
+<h3 class="western" style="font-weight: normal"><font size="4" style="font-size: 14pt">How to edit with Tiled:</font></h3>
+</font>
+
+</p>
+<p><font size="3" style="font-size: 12pt">1. Do all the steps above until step 8.</font></p>
+<p><font size="3" style="font-size: 12pt">2. Open the file and under [header], look for the height of the level and remember it</font></p>
+<p><font size="3" style="font-size: 12pt">3. Go to Tiled and create a new tilemap. The width for the map should be 5 and the height should be the same height as the original level. The tile size depends on what tileset you use</font></p>
+<p><font size="3" style="font-size: 12pt">4. Import your tileset to the tilemap</font></p>
+<p><font size="3" style="font-size: 12pt">5. Make your route. Once you finish editing save the tilemap</font></p>
+<p><font size="3" style="font-size: 12pt">6. Open the tilemap in Notepad ++
+<p><font size="3" style="font-size: 12pt">7. Copy all the numbers from the tilemap to the level file (Only copy the numbers)</font></p>
+<p><font size="3" style="font-size: 12pt">8. Save the level file
+somewhere you can remember</font></p>
+<p><font size="3" style="font-size: 12pt">9. Continue with step 11</font></p>
+<br>
+
+</p>
+<p id="themes1" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>IV:
+Custom Themes (Order of themes)</b></font></p>
+<p><br/>
+<br/>
+
+</font>
+</p>
+<p><font size="3" style="font-size: 12pt">1. Open dnSpy</font></p>
+<p><font size="3" style="font-size: 12pt">2. Select file &gt; open</font></p>
+<p><font size="3" style="font-size: 12pt">3. Go to your Rolling Sky
+installation folder &gt; Rolling Sky_Data &gt; Managed</font></p>
+<p><font size="3" style="font-size: 12pt">4. Select the
+Assembly-CSharp.dll file and open it</font></p>
+<p><font size="3" style="font-size: 12pt">5. Select the magnifying glass next to the start button to search</font></p>
+<p><font size="3" style="font-size: 12pt">6. Search “LevelDesigner” and double click on the first option</font></p>
+<p><font size="3" style="font-size: 12pt">7. Scroll to line 711. In this line you will find the code for all of the theme changes in rs. The code is in order of level IDs. It should look something like this:</font></p>
+<p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;white-space: nowrap;">new LevelDesigner.WorldTheme(new LevelDesigner.Theme[]<br>&#9;&#9;{<br>&#9;&#9;&#9;new LevelDesigner.Theme(0, 1, 1f),<br>&#9;&#9;&#9;new LevelDesigner.Theme(110, 2, 1f),<br>&#9;&#9;&#9;new LevelDesigner.Theme(212, 3, 1f, true),<br>&#9;&#9;&#9;new LevelDesigner.Theme(317, 6, 1f, false, false, false, false, false, false),<br>&#9;&#9;&#9;new LevelDesigner.Theme(420, 1, 1f)<br>&#9;&#9;}),</p>
+<p><font size="3" style="font-size: 10pt">(Level 1 "Massif" theme changes)</font></p>
+<p><font size="3" style="font-size: 12pt">8. Search for the level you want to change the theme. Right click the code and select "Edit Method (C#)" to edit it. 
+Each row of numbers indicates a theme change. 
+The first number indicates in what line of the level file the theme is going to change. 
+The second number is what theme its going to change into (<a target="_blank" href="../../assets/|{–365/All_Theme_IDs_For_Edit.docx">Here</a> is a list made by |{–365). 
+The third number is how much time it takes to change theme. (It should always be 1f). Here is what each true/false means:</font></p>
+<p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;">
+    useTrees<br>
+    useTowers<br>
+    useAltGround<br>
+    usePyramids<br>
+    usePalmTrees<br>
+    useSlashers<br>
+    useBuildings<br>
+    useFloodLights<br>
+    useFilmGrainEffect<br>
+    useAltPalmTrees<br>
+    useTeslas<br>
+    useRetroEffects<br>
+    seGreenMonitorEffects<br>
+    useColorMonitorEffect<br>
+</p>
+<p><font size="3" style="font-size: 12pt">9. After you finish editing click compile</font></p>
+<p><font size="3" style="font-size: 12pt">10. Click on file &gt; Save all...</font></p>
+<p><font size="3" style="font-size: 12pt">11. Click OK</font></p>
+<br>
+
+</p>
+<p id="themes2" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>V:
+Custom Themes (Textures)</b></font></p>
+<p><br/>
+<br/>
+
+<p><font size="3" style="font-size: 12pt">1. Open UABE</font></p>
+<p><font size="3" style="font-size: 12pt">2. Select file &gt; open</font></p>
+<p><font size="3" style="font-size: 12pt">3. Go to your Rolling Sky
+installation folder &gt; Rolling Sky_Data</font></p>
+<p><font size="3" style="font-size: 12pt">4. Select the
+sharedassets0.assets file and open it</font></p>
+<p><font size="3" style="font-size: 12pt">5. Go to view &gt; search
+by name</font></p>
+<p><font size="3" style="font-size: 12pt">6. Search the following
+“textureX” (X means the level id of the level texture you
+want to edit and texture means the texture you want to edit. If you are importing a bg, skip to step 10. <a target="_blank" href="https://docs.google.com/spreadsheets/d/1QgCmHYrANVYz2GVehQY7-G6Al-T3fkcN24aRD3B-r1c/edit?usp=drivesdk">Here is a list</a>)</font></p>
+<p><font size="3" style="font-size: 12pt">7. Select plugins &gt;
+export to .png</font></p>
+<p><font size="3" style="font-size: 12pt">8. Save the texture file
+somewhere you can remember</font></p>
+<p><font size="3" style="font-size: 12pt">9. Edit the texture with your image editor of choice and
+save it</font></p>
+<p><font size="3" style="font-size: 12pt">10. Go back to UABE and
+select plugin &gt; edit &gt; load</font></p>
+<p><font size="3" style="font-size: 12pt">11. Select the edited
+texture then ok &gt; ok</font></p>
+<p><font size="3" style="font-size: 12pt">12. Save the
+sharedassets0.assets by clicking file &gt; save</font></p>
+<p><font size="3" style="font-size: 12pt">Note: UABE wont let you
+save the sharedassets0.assets in its original location while its open.
+You have to save it somewhere else and close UABE. After closing UABE
+you can move the sharedassets0.assets Rolling Sky installation &gt;
+Rolling Sky_DATA</font></p>
+<br>
+
+</p>
+<p id="music" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>VI:
+Custom Music (Method made by *pending*)</b></font></p>
+<p><br/>
+<br/>
+
+<p><font size="3" style="font-size: 12pt">1. Create an Unity Project with nothing just the music.</font></p>
+<p><font size="3" style="font-size: 12pt">2. Build the project.</font></p>
+<p><font size="3" style="font-size: 12pt">3. Use UABE in "sharedassets0.assets"</font></p>
+<p><font size="3" style="font-size: 12pt">4. Select the AudioClips and export as Dump.</font></p>
+<p><font size="3" style="font-size: 12pt">5. Rename the Dump to the AudioClip name to be replaced. EX: to change massif rename to "Music1.txt".</font></p>
+<p><font size="3" style="font-size: 12pt">6. Change the "sharedassets0.resource" fron the unity project to any name. EX: "CustomMusic.resource"</font></p>
+<p><font size="3" style="font-size: 12pt">7. Open the dump file and change the "1 string m_Source = "file.resource"" &gt;&gt; file.resource can be another name, change to the custom filename.</font></p>
+<p><font size="3" style="font-size: 12pt">8. Paste the custom file "CustomMusic.resource" in Rolling Sky_Data folder.</font></p>
+<p><font size="3" style="font-size: 12pt">9. Using UABE open "globalgamemanagers" and select the music to change. EX: "Music1"</font></p>
+<p><font size="3" style="font-size: 12pt">10. Select and import the dump file and save the files.</font></p>
+</body>
+</html>
