@@ -24,6 +24,7 @@ make Rolling Sky edits</b></font></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#themes1"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">IV: Custom themes (I)</span></font></a></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#themes2"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">V: Custom themes (II)</span></font></a></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#music"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">VI: Custom Music</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#worlddata"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">VII: Editing WorldData (level speed and where the level ends)</span></font></a></p>
 <p align="left"><br/>
 <br/>
 
@@ -34,12 +35,12 @@ Sky</span></font></a></p>
 <p align="left" style="line-height: 100%"><a target="_blank" href="https://notepad-plus-plus.org/"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">Notepad
 ++</span></font></a></p>
 <p align="left" style="line-height: 100%"><a target="_blank" href="https://github.com/SeriousCache/UABE/releases/"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">UABE</span></font></a></p>
-<p align="left" style="line-height: 100%"><a target="_blank" href="https://github.com/dnSpy/dnSpy/releases/"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">dnSpy</span></font></a> (you can also use Visual Studio)</p>
+<p align="left" style="line-height: 100%"><a target="_blank" href="https://github.com/dnSpy/dnSpy/releases/"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">dnSpy</span></font></a></p>
 <p align="left" style="line-height: 100%"><a target="_blank" href="https://unity3d.com/get-unity/download/archive"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">Unity
-2018 or lower</span></font></a></p>
+2019 or lower</span></font></a></p>
 <p align="left" style="line-height: 100%"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><a target="_blank" href="https://www.mapeditor.org/">Tiled</a>
 (Optional)</span></font></p>
-<p align="left" style="line-height: 100%"><a target="_blank" href="../../assets/Junipea/RollingTileset.png"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">A tileset for Tiled</span></font></a> (Optional) (Made by Junipea and DodecaDev)</p>
+<p align="left" style="line-height: 100%"><a target="_blank" href="https://sqdldev.github.io/rolling-sky/tileset/"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">A tileset for Tiled</span></font></a> (Optional) (Made by sqdldev) (64 x 64)</p>
 <p align="left" style="line-height: 100%"><br/>
 <br/>
 
@@ -261,7 +262,7 @@ Assembly-CSharp.dll file and open it</font></p>
 <p><font size="3" style="font-size: 12pt">7. Scroll to line 711. In this line you will find the code for all of the theme changes in rs. The code is in order of level IDs. It should look something like this:</font></p>
 <p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;white-space: nowrap;">new LevelDesigner.WorldTheme(new LevelDesigner.Theme[]<br>&#9;&#9;{<br>&#9;&#9;&#9;new LevelDesigner.Theme(0, 1, 1f),<br>&#9;&#9;&#9;new LevelDesigner.Theme(110, 2, 1f),<br>&#9;&#9;&#9;new LevelDesigner.Theme(212, 3, 1f, true),<br>&#9;&#9;&#9;new LevelDesigner.Theme(317, 6, 1f, false, false, false, false, false, false),<br>&#9;&#9;&#9;new LevelDesigner.Theme(420, 1, 1f)<br>&#9;&#9;}),</p>
 <p><font size="3" style="font-size: 10pt">(Level 1 "Massif" theme changes)</font></p>
-<p><font size="3" style="font-size: 12pt">8. Search for the level you want to change the theme. Right click the code and select "Edit Method (C#)" to edit it. 
+<p><font size="3" style="font-size: 12pt">8. Search for the level you want to change the theme. Right click the code and select "Edit Class (C#)" to edit it. 
 Each row of numbers indicates a theme change. 
 The first number indicates in what line of the level file the theme is going to change. 
 The second number is what theme its going to change into (<a target="_blank" href="../../assets/|{–365/All_Theme_IDs_For_Edit.docx">Here</a> is a list made by |{–365). 
@@ -339,5 +340,75 @@ Custom Music (Method made by Pão)</b></font></p>
 <p><font size="3" style="font-size: 12pt">8. Paste the custom file "CustomMusic.resource" in Rolling Sky_Data folder.</font></p>
 <p><font size="3" style="font-size: 12pt">9. Using UABE open "globalgamemanagers" and select the music to change. EX: "Music1"</font></p>
 <p><font size="3" style="font-size: 12pt">10. Select and import the dump file and save the files.</font></p>
+<br>
+
+</p>
+<p id="worlddata" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>VII: Editing WorldData (level speed and where the level ends)</b></font></p>
+<p><br/>
+<br/>
+
+<p><font size="3" style="font-size: 12pt">1. Open Assembly-CSharp.dll with dnSpy</font></p>
+<p><font size="3" style="font-size: 12pt">2. Search LevelDesigner</font></p>
+<p><font size="3" style="font-size: 12pt">3. Scroll down until you see the following</font></p>
+<p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;white-space: nowrap;">
+	private static LevelDesigner.WorldData[] worldData = new LevelDesigner.WorldData[] <br>
+	{<br>
+		new LevelDesigner.WorldData("1", new int?(500), 0.525f, 0.525f, 1f, 6f),<br>
+		new LevelDesigner.WorldData("2", new int?(650), 0.625f, 0.625f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("3", new int?(805), 0.725f, 0.8f, 1f, 5f),<br>
+		new LevelDesigner.WorldData("4", new int?(970), 0.8f, 1f, 1f, 6f),<br>
+		new LevelDesigner.WorldData("5", new int?(1170), 0.85f, 1f, 0.5f, 6f),<br>
+		new LevelDesigner.WorldData("6", new int?(1095), 0.85f, 0.9f, 0.9f, 6f),<br>
+		new LevelDesigner.WorldData("7", new int?(1150), 0.85f, 0.9f, 0.9f, 6f),<br>
+		new LevelDesigner.WorldData("8", new int?(914), 0.895f, 0.9f, 0.85f, 6f),<br>
+		new LevelDesigner.WorldData("9", new int?(1760), 0.902f, 0.902f, 0.902f, 6f),<br>
+		new LevelDesigner.WorldData("10", new int?(1112), 0.8f, 0.9f, 1f, 6f),<br>
+		new LevelDesigner.WorldData("11", new int?(1136), 0.85f, 1f, 1f, 6f),<br>
+		new LevelDesigner.WorldData("12", new int?(1100), 0.8f, 0.9f, 1f, 6f),<br>
+		new LevelDesigner.WorldData("13", new int?(650), 0.625f, 0.625f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("14", new int?(1043), 0.85f, 0.85f, 1f, 6f),<br>
+		new LevelDesigner.WorldData("15", new int?(1042), 0.875f, 0.875f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("16", new int?(1035), 0.725f, 0.8f, 1f, 5f),<br>
+		new LevelDesigner.WorldData("17", new int?(1079), 0.875f, 0.875f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("18", new int?(780), 0.65f, 0.65f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("19", new int?(1022), 0.85f, 1f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("20", new int?(946), 0.7f, 0.75f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("21", new int?(1188), 0.85f, 0.875f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("22", new int?(1070), 0.725f, 0.8f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("23", new int?(1150), 0.85f, 0.9f, 0.9f, 6f),<br>
+		new LevelDesigner.WorldData("24", new int?(1040), 0.725f, 0.8f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("25", new int?(1150), 0.85f, 0.85f, 0.85f, 6f),<br>
+		new LevelDesigner.WorldData("26", new int?(1150), 0.85f, 0.85f, 0.85f, 6f),<br>
+		new LevelDesigner.WorldData("27", new int?(1130), 0.8f, 0.8f, 0.85f, 6f),<br>
+		new LevelDesigner.WorldData("28", new int?(1142), 0.87f, 1f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("29", new int?(1050), 0.725f, 0.8f, 0.85f, 6f),<br>
+		new LevelDesigner.WorldData("30", new int?(1142), 0.87f, 1f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("31", new int?(1043), 0.725f, 0.725f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("32", new int?(1105), 0.85f, 0.9f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("33", new int?(712), 0.6f, 0.7f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("34", new int?(1130), 0.85f, 0.9f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("35", new int?(728), 0.625f, 0.7f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("36", new int?(456), 0.45f, 0.625f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("37", new int?(1118), 0.87f, 0.9f, 0.9f, 6f),<br>
+		new LevelDesigner.WorldData("38", new int?(944), 0.625f, 0.625f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("39", new int?(764), 0.725f, 0.8f, 0.9f, 6f),<br>
+		new LevelDesigner.WorldData("40", new int?(1100), 0.8f, 1f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("41", new int?(845), 0.525f, 0.7f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("42", new int?(1180), 0.87f, 0.9f, 0.9f, 6f),<br>
+		new LevelDesigner.WorldData("43", new int?(485), 0.625f, 0.625f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("44", new int?(1154), 0.87f, 0.9f, 0.9f, 6f),<br>
+		new LevelDesigner.WorldData("45", new int?(511), 0.725f, 0.8f, 0.9f, 6f),<br>
+		new LevelDesigner.WorldData("46", new int?(1355), 0.725f, 0.8f, 0.9f, 6f),<br>
+		new LevelDesigner.WorldData("47", new int?(1145), 0.725f, 0.8f, 0.9f, 6f),<br>
+		new LevelDesigner.WorldData("48", new int?(1660), 0.6f, 0.7f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("49", new int?(1021), 0.6f, 0.7f, 1f, 7f),<br>
+		new LevelDesigner.WorldData("50", new int?(1108), 0.9f, 1.1f, 1f, 7f)<br>
+	};
+</p>
+<p><font size="3" style="font-size: 12pt">4. Right click and select "Edit Class (C#)"</font></p>
+<p><font size="3" style="font-size: 12pt">5. Edit the int and float values (The int value is the line where the level ends. The first float value is the start speed. The second float is the maximum speed. The third float is at what percent the level reaches max speed (the percent goes in the decimal place unless its 100% which is 1f). The fourth float is how many lines there are after the finish line.)(Remember that float values can use the decimal place and int cant)</font></p>
+<p><font size="3" style="font-size: 12pt">6. Click compile</font></p>
+<p><font size="3" style="font-size: 12pt">7. Save the file by pressing Ctrl + Shift + S</font></p>
+<p><font size="3" style="font-size: 12pt">8. Click Ok</font></p>
 </body>
 </html>
