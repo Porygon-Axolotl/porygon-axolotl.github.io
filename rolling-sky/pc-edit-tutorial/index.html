@@ -28,6 +28,7 @@ make Rolling Sky edits</b></font></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#end"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">VIII: Custom end</span></font></a></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#midground"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">IX: Changing midgrounds</span></font></a></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#colorsets"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">X: Changing theme colors and ui colors</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#configureenemy"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">XI: Dependent Objects</span></font></a></p>
 <p align="left"><br/>
 <br/>
 
@@ -75,7 +76,7 @@ corresponding to an object or obstacle in a level. </font>
 <font size="3" style="font-size: 12pt">9 = stomper</font></h3>
 <h3 class="western" align="left" style="font-weight: normal; line-height: 100%">
 <font size="3" style="font-size: 12pt">You can find a list of all
-item IDs <a target="_blank" href="https://sqdldev.github.io/rolling-sky/obstacle-ids/">here</a> or <a target="_blank" href="https://docs.google.com/document/d/1wjrcXSk6uXE27lBXjL_vbrf3KZt9yZlD5UsOTnqXecc/edit">here</a>.</font></h3>
+item IDs <a target="_blank" href="https://sqdldev.github.io/rolling-sky/obstacle-ids/">here</a> or <a target="_blank" href="hhttps://docs.google.com/spreadsheets/d/1a7mPDGtVoXU9s9Bemxu75MpeK22xGXL5nn1u6V38dSE/edit?usp=sharing">here</a>.</font></h3>
 <h3 class="western" align="left" style="line-height: 100%"><br/>
 <br/>
 
@@ -524,13 +525,22 @@ Assembly-CSharp.dll file and open it</font></p>
 <br>
 
 </p>
-<p id="configureenemy" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>IV:
-Custom themes (Order of themes)</b></font></p>
+<p id="configureenemy" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>XI: Dependent Objects</b></font></p>
 <p><br/>
 <br/>
 
-</font>
 </p>
+<h3 class="western" style="font-weight: normal"><font size="4" style="font-size: 14pt">What
+are they?:</font></h3>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">Dependent objects are objects that vary depending on the current theme. Dependent objects dont have a specific theme ID. They use another already existing object's ID</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">Example:</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">Halloween pillar laser= riser</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">lvl9 pillars</font></p>
+<p align="left" style="font-weight: normal; line-height: 100%"><font size="3" style="font-size: 12pt">Here is a list</font></p>
+<p><br/>
+
+<font size="4" style="font-size: 14pt">How
+to edit them:</font></font></p>
 <p><font size="3" style="font-size: 12pt">1. Open dnSpy</font></p>
 <p><font size="3" style="font-size: 12pt">2. Select file &gt; open</font></p>
 <p><font size="3" style="font-size: 12pt">3. Go to your Rolling Sky
@@ -538,34 +548,13 @@ installation folder &gt; Rolling Sky_Data &gt; Managed</font></p>
 <p><font size="3" style="font-size: 12pt">4. Select the
 Assembly-CSharp.dll file and open it</font></p>
 <p><font size="3" style="font-size: 12pt">5. Select the magnifying glass next to the start button to search</font></p>
-<p><font size="3" style="font-size: 12pt">6. Search “LevelDesigner” and double click on the first option</font></p>
-<p><font size="3" style="font-size: 12pt">7. Scroll to line 711. In this line you will find the code for all of the theme changes in rs. The code is in order of level IDs. It should look something like this:</font></p>
-<p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;white-space: nowrap;">new LevelDesigner.WorldTheme(new LevelDesigner.Theme[]<br>&#9;&#9;{<br>&#9;&#9;&#9;new LevelDesigner.Theme(0, 1, 1f),<br>&#9;&#9;&#9;new LevelDesigner.Theme(110, 2, 1f),<br>&#9;&#9;&#9;new LevelDesigner.Theme(212, 3, 1f, true),<br>&#9;&#9;&#9;new LevelDesigner.Theme(317, 6, 1f, false, false, false, false, false, false),<br>&#9;&#9;&#9;new LevelDesigner.Theme(420, 1, 1f)<br>&#9;&#9;}),</p>
-<p><font size="3" style="font-size: 10pt">(Level 1 "Massif" theme changes)</font></p>
-<p><font size="3" style="font-size: 12pt">8. Search for the level you want to change the theme. Right click the code and select "Edit Class (C#)" to edit it. 
-Each row of numbers indicates a theme change. 
-The first number indicates in what line of the level file the theme is going to change. 
-The second number is what theme its going to change into (<a target="_blank" href="../../assets/|{–365/All_Theme_IDs_For_Edit.docx">Here</a> is a list made by |{–365). 
-The third number is how much time it takes to change theme. (It should always be 1f). Here is what each true/false means:</font></p>
-<p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;">
-    useTrees<br>
-    useTowers<br>
-    useAltGround<br>
-    usePyramids<br>
-    usePalmTrees<br>
-    useSlashers<br>
-    useBuildings<br>
-    useFloodLights<br>
-    useFilmGrainEffect<br>
-    useAltPalmTrees<br>
-    useTeslas<br>
-    useRetroEffects<br>
-    seGreenMonitorEffects<br>
-    useColorMonitorEffect<br>
-</p>
-<p><font size="3" style="font-size: 12pt">9. After you finish editing click compile</font></p>
-<p><font size="3" style="font-size: 12pt">10. Click on file &gt; Save all...</font></p>
-<p><font size="3" style="font-size: 12pt">11. Click OK</font></p>
+<p><font size="3" style="font-size: 12pt">6. Search “ConfigureEnemy” and double click on the first option</font></p>
+<p><font size="3" style="font-size: 12pt">7. Search for the dependent object you want to edit. Right click the code and select "Edit Class (C#)" to edit it.<br/>
+Note: All dependent objects have different code although most include a line of code (LevelDesigner.CurrentWorldThemeNumber == 22 ||) that specifies what theme uses that dependent object.<br/>
+Note: Remember to remove conflicting dependent objects before adding a new dependent object</font></p>
+<p><font size="3" style="font-size: 12pt">8. After you finish editing click compile</font></p>
+<p><font size="3" style="font-size: 12pt">9. Click on file &gt; Save all...</font></p>
+<p><font size="3" style="font-size: 12pt">10. Click OK</font></p>
 <br>
 </body>
 </html>
