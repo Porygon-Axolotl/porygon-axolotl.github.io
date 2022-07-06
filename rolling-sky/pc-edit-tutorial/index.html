@@ -19,12 +19,14 @@ make Rolling Sky edits</b></font></p>
 </p>
 <p align="left"><font size="4" style="font-size: 15pt"><b>Sections:</b></font></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#IDs"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">I: Understanding item IDs</span></font></a></p>
-<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#geobuffers"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">II: Understanding Geobuffers</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#geobuffers"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">II: Understanding geobuffers</span></font></a></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#routes"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">III: Custom routes</span></font></a></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#themes1"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">IV: Custom themes (I)</span></font></a></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#themes2"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">V: Custom themes (II)</span></font></a></p>
-<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#music"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">VI: Custom Music</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#music"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">VI: Custom music</span></font></a></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#worlddata"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">VII: Editing WorldData (level speed and where the level ends)</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#end"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">VIII: Custom end</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#midground"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">IX: Changing midgrounds</span></font></a></p>
 <p align="left"><br/>
 <br/>
 
@@ -106,7 +108,7 @@ load. Tiles 181 through 188 are loader tiles.</font></h3>
 
 </p>
 <p id="geobuffers" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>II:
-Understanding Geobuffers</b></font></p>
+Understanding geobuffers</b></font></p>
 <p><br/>
 <br/>
 
@@ -245,7 +247,7 @@ somewhere you can remember</font></p>
 
 </p>
 <p id="themes1" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>IV:
-Custom Themes (Order of themes)</b></font></p>
+Custom themes (Order of themes)</b></font></p>
 <p><br/>
 <br/>
 
@@ -290,7 +292,7 @@ The third number is how much time it takes to change theme. (It should always be
 
 </p>
 <p id="themes2" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>V:
-Custom Themes (Textures)</b></font></p>
+Custom themes (Textures)</b></font></p>
 <p><br/>
 <br/>
 
@@ -326,7 +328,7 @@ Rolling Sky_DATA</font></p>
 
 </p>
 <p id="music" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>VI:
-Custom Music (Method made by Pão)</b></font></p>
+Custom music (Method made by Pão)</b></font></p>
 <p><br/>
 <br/>
 
@@ -410,5 +412,78 @@ Custom Music (Method made by Pão)</b></font></p>
 <p><font size="3" style="font-size: 12pt">6. Click compile</font></p>
 <p><font size="3" style="font-size: 12pt">7. Save the file by pressing Ctrl + Shift + S</font></p>
 <p><font size="3" style="font-size: 12pt">8. Click Ok</font></p>
+<br>
+
+</p>
+<p id="end" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>VIII:
+Custom end</b></font></p>
+<p><br/>
+<br/>
+
+</font>
+</p>
+<p><font size="3" style="font-size: 12pt">1. Open UABE</font></p>
+<p><font size="3" style="font-size: 12pt">2. Select file &gt; open</font></p>
+<p><font size="3" style="font-size: 12pt">3. Go to your Rolling Sky
+installation folder &gt; Rolling Sky_Data</font></p>
+<p><font size="3" style="font-size: 12pt">4. Select the
+resources.assets file and open it</font></p>
+<p><font size="3" style="font-size: 12pt">5. Go to view &gt; search
+by name</font></p>
+<p><font size="3" style="font-size: 12pt">6. Search the following
+“endX” (X means the level id of the end of a level you
+want to edit. <a target="_blank" href="https://sqdldev.github.io/rolling-sky/level-names/">Here is a list</a>)</font></p>
+<p><font size="3" style="font-size: 12pt">7. Select plugins &gt;
+export to .txt</font></p>
+<p><font size="3" style="font-size: 12pt">8. Save the end level file
+somewhere you can remember</font></p>
+<p><font size="3" style="font-size: 12pt">9. Open Notepad ++ (dont
+close UABE)</font></p>
+<p><font size="3" style="font-size: 12pt">10. Edit the end and
+save it</font></p>
+<p><font size="3" style="font-size: 12pt">11. Go back to UABE and
+select plugin &gt; import from .txt</font></p>
+<p><font size="3" style="font-size: 12pt">12. Select the edited
+end</font></p>
+<p><font size="3" style="font-size: 12pt">13. Save the
+resources.assets by clicking file &gt; save</font></p>
+<p><font size="3" style="font-size: 12pt">Note: UABE wont let you	save the resources.assets in its original location while its open.
+You have to save it somewhere else and close UABE. After closing UABE
+you can move the resources.assets Rolling Sky installation &gt;
+Rolling Sky_DATA</font></p>
+<br>
+
+</p>
+<p id="themes1" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>IX:
+Changing Midgrounds</b></font></p>
+<p><br/>
+<br/>
+
+</font>
+</p>
+<p><font size="3" style="font-size: 12pt">1. Open dnSpy</font></p>
+<p><font size="3" style="font-size: 12pt">2. Select file &gt; open</font></p>
+<p><font size="3" style="font-size: 12pt">3. Go to your Rolling Sky
+installation folder &gt; Rolling Sky_Data &gt; Managed</font></p>
+<p><font size="3" style="font-size: 12pt">4. Select the
+Assembly-CSharp.dll file and open it</font></p>
+<p><font size="3" style="font-size: 12pt">5. Select the magnifying glass next to the start button to search</font></p>
+<p><font size="3" style="font-size: 12pt">6. Search “MidgroundManager” and double click on the first option</font></p>
+<p><font size="3" style="font-size: 12pt">7. Scroll to line 190. In this line you will find the code for all of the themes midground configuration in rs. The code is in order of theme IDs (<a target="_blank" href="../../assets/|{–365/All_Theme_IDs_For_Edit.docx">Theme ID list</a>). It should look something like this:</font></p>
+<p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;white-space: nowrap;">
+	private static MidgroundManager.BlockData[] blockData = new MidgroundManager.BlockData[]<br>
+	{<br>
+		new MidgroundManager.BlockData(5f, 15f, 0f, 12f, 4, new PrefabName[]<br>
+		{<br>
+			PrefabName.Block1<br>
+		}),
+<p><font size="3" style="font-size: 10pt">(Theme 1 "Massif" midground configuration)</font></p>
+<p><font size="3" style="font-size: 12pt">8. Search for the theme you want to change the midground. Right click the code and select "Edit Class (C#)" to edit it. 
+The row of numbers on top is the location and amount of the midground (Hover your mouse over BlockData to know which float does what). 
+To change the model you have to change whats after the PrefabName. (A list of midgrounds has not been created so there will be no list. You will have to find out which model is which yourself) (Some midgrounds use more than one model. You can also add or remove them as you wish)</font></p>
+<p><font size="3" style="font-size: 12pt">9. After you finish editing click compile</font></p>
+<p><font size="3" style="font-size: 12pt">10. Click on file &gt; Save all...</font></p>
+<p><font size="3" style="font-size: 12pt">11. Click OK</font></p>
+<br>
 </body>
 </html>
