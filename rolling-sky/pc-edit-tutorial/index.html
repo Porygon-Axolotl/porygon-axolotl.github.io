@@ -350,9 +350,15 @@ Custom music (Method made by Pão)</b></font></p>
 <p><br/>
 <br/>
 
-<p><font size="3" style="font-size: 12pt">1. Open Assembly-CSharp.dll with dnSpy</font></p>
-<p><font size="3" style="font-size: 12pt">2. Search LevelDesigner</font></p>
-<p><font size="3" style="font-size: 12pt">3. Scroll down until you see the following</font></p>
+<p><font size="3" style="font-size: 12pt">1. Open dnSpy</font></p>
+<p><font size="3" style="font-size: 12pt">2. Select file &gt; open</font></p>
+<p><font size="3" style="font-size: 12pt">3. Go to your Rolling Sky
+installation folder &gt; Rolling Sky_Data &gt; Managed</font></p>
+<p><font size="3" style="font-size: 12pt">4. Select the
+Assembly-CSharp.dll file and open it</font></p>
+<p><font size="3" style="font-size: 12pt">5. Select the magnifying glass next to the start button to search</font></p>
+<p><font size="3" style="font-size: 12pt">6. Search “LevelDesigner” and double click on the first option</font></p>
+<p><font size="3" style="font-size: 12pt">7. Scroll to line 650. In this line you will find the code for all of the theme changes in rs. The code is in order of level IDs. It should look something like this:</font></p>
 <p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;white-space: nowrap;">
 	private static LevelDesigner.WorldData[] worldData = new LevelDesigner.WorldData[] <br>
 	{<br>
@@ -408,11 +414,10 @@ Custom music (Method made by Pão)</b></font></p>
 		new LevelDesigner.WorldData("50", new int?(1108), 0.9f, 1.1f, 1f, 7f)<br>
 	};
 </p>
-<p><font size="3" style="font-size: 12pt">4. Right click and select "Edit Class (C#)"</font></p>
-<p><font size="3" style="font-size: 12pt">5. Edit the int and float values (The int value is the line where the level ends. The first float value is the start speed. The second float is the maximum speed. The third float is at what percent the level reaches max speed (the percent goes in the decimal place unless its 100% which is 1f). The fourth float is how many lines there are after the finish line.)(Remember that float values can use the decimal place and int cant)</font></p>
-<p><font size="3" style="font-size: 12pt">6. Click compile</font></p>
-<p><font size="3" style="font-size: 12pt">7. Save the file by pressing Ctrl + Shift + S</font></p>
-<p><font size="3" style="font-size: 12pt">8. Click Ok</font></p>
+<p><font size="3" style="font-size: 12pt">8. Edit the int and float values (The int value is the line where the level ends. The first float value is the start speed. The second float is the maximum speed. The third float is at what percent the level reaches max speed (the percent goes in the decimal place unless its 100% which is 1f). The fourth float is how many lines there are after the finish line.)(Remember that float values can use the decimal place and int cant)</font></p>
+<p><font size="3" style="font-size: 12pt">9. After you finish editing click compile</font></p>
+<p><font size="3" style="font-size: 12pt">10. Click on file &gt; Save all...</font></p>
+<p><font size="3" style="font-size: 12pt">11. Click OK</font></p>
 <br>
 
 </p>
@@ -513,6 +518,51 @@ Assembly-CSharp.dll file and open it</font></p>
 <p><font size="3" style="font-size: 10pt">(Theme 1 "Massif" color configuration)</font></p>
 <p><font size="3" style="font-size: 12pt">8. Search for the theme you want to change the color configuration. Right click the code and select "Edit Class (C#)" to edit it. 
 <a target="_blank" href="https://sqdldev.github.io/rolling-sky/colorsets/">Use this as a reference</a></font></p>
+<p><font size="3" style="font-size: 12pt">9. After you finish editing click compile</font></p>
+<p><font size="3" style="font-size: 12pt">10. Click on file &gt; Save all...</font></p>
+<p><font size="3" style="font-size: 12pt">11. Click OK</font></p>
+<br>
+
+</p>
+<p id="configureenemy" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>IV:
+Custom themes (Order of themes)</b></font></p>
+<p><br/>
+<br/>
+
+</font>
+</p>
+<p><font size="3" style="font-size: 12pt">1. Open dnSpy</font></p>
+<p><font size="3" style="font-size: 12pt">2. Select file &gt; open</font></p>
+<p><font size="3" style="font-size: 12pt">3. Go to your Rolling Sky
+installation folder &gt; Rolling Sky_Data &gt; Managed</font></p>
+<p><font size="3" style="font-size: 12pt">4. Select the
+Assembly-CSharp.dll file and open it</font></p>
+<p><font size="3" style="font-size: 12pt">5. Select the magnifying glass next to the start button to search</font></p>
+<p><font size="3" style="font-size: 12pt">6. Search “LevelDesigner” and double click on the first option</font></p>
+<p><font size="3" style="font-size: 12pt">7. Scroll to line 711. In this line you will find the code for all of the theme changes in rs. The code is in order of level IDs. It should look something like this:</font></p>
+<p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;white-space: nowrap;">new LevelDesigner.WorldTheme(new LevelDesigner.Theme[]<br>&#9;&#9;{<br>&#9;&#9;&#9;new LevelDesigner.Theme(0, 1, 1f),<br>&#9;&#9;&#9;new LevelDesigner.Theme(110, 2, 1f),<br>&#9;&#9;&#9;new LevelDesigner.Theme(212, 3, 1f, true),<br>&#9;&#9;&#9;new LevelDesigner.Theme(317, 6, 1f, false, false, false, false, false, false),<br>&#9;&#9;&#9;new LevelDesigner.Theme(420, 1, 1f)<br>&#9;&#9;}),</p>
+<p><font size="3" style="font-size: 10pt">(Level 1 "Massif" theme changes)</font></p>
+<p><font size="3" style="font-size: 12pt">8. Search for the level you want to change the theme. Right click the code and select "Edit Class (C#)" to edit it. 
+Each row of numbers indicates a theme change. 
+The first number indicates in what line of the level file the theme is going to change. 
+The second number is what theme its going to change into (<a target="_blank" href="../../assets/|{–365/All_Theme_IDs_For_Edit.docx">Here</a> is a list made by |{–365). 
+The third number is how much time it takes to change theme. (It should always be 1f). Here is what each true/false means:</font></p>
+<p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;">
+    useTrees<br>
+    useTowers<br>
+    useAltGround<br>
+    usePyramids<br>
+    usePalmTrees<br>
+    useSlashers<br>
+    useBuildings<br>
+    useFloodLights<br>
+    useFilmGrainEffect<br>
+    useAltPalmTrees<br>
+    useTeslas<br>
+    useRetroEffects<br>
+    seGreenMonitorEffects<br>
+    useColorMonitorEffect<br>
+</p>
 <p><font size="3" style="font-size: 12pt">9. After you finish editing click compile</font></p>
 <p><font size="3" style="font-size: 12pt">10. Click on file &gt; Save all...</font></p>
 <p><font size="3" style="font-size: 12pt">11. Click OK</font></p>
