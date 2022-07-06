@@ -27,6 +27,7 @@ make Rolling Sky edits</b></font></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#worlddata"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">VII: Editing WorldData (level speed and where the level ends)</span></font></a></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#end"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">VIII: Custom end</span></font></a></p>
 <p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#midground"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">IX: Changing midgrounds</span></font></a></p>
+<p align="left"><a target="_self" href="https://porygon-axolotl.github.io/rolling-sky/pc-edit-tutorial/#colorsets"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">IX: X:Changing theme colors and ui colors</span></font></a></p>
 <p align="left"><br/>
 <br/>
 
@@ -455,7 +456,7 @@ Rolling Sky_DATA</font></p>
 
 </p>
 <p id="midground" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>IX:
-Changing Midgrounds</b></font></p>
+Changing midgrounds</b></font></p>
 <p><br/>
 <br/>
 
@@ -481,6 +482,37 @@ Assembly-CSharp.dll file and open it</font></p>
 <p><font size="3" style="font-size: 12pt">8. Search for the theme you want to change the midground. Right click the code and select "Edit Class (C#)" to edit it. 
 The row of numbers on top is the location and amount of the midground (Hover your mouse over BlockData to know which float does what). 
 To change the model you have to change whats after the PrefabName. (A list of midgrounds has not been created so there will be no list. You will have to find out which model is which yourself) (Some midgrounds use more than one model. You can also add or remove them as you wish)</font></p>
+<p><font size="3" style="font-size: 12pt">9. After you finish editing click compile</font></p>
+<p><font size="3" style="font-size: 12pt">10. Click on file &gt; Save all...</font></p>
+<p><font size="3" style="font-size: 12pt">11. Click OK</font></p>
+<br>
+
+</p>
+<p id="colorsets" align="left" style="line-height: 100%"><font size="4" style="font-size: 15pt"><b>X:
+Changing theme colors and ui colors</b></font></p>
+<p><br/>
+<br/>
+
+</font>
+</p>
+<p><font size="3" style="font-size: 12pt">1. Open dnSpy</font></p>
+<p><font size="3" style="font-size: 12pt">2. Select file &gt; open</font></p>
+<p><font size="3" style="font-size: 12pt">3. Go to your Rolling Sky
+installation folder &gt; Rolling Sky_Data &gt; Managed</font></p>
+<p><font size="3" style="font-size: 12pt">4. Select the
+Assembly-CSharp.dll file and open it</font></p>
+<p><font size="3" style="font-size: 12pt">5. Select the magnifying glass next to the start button to search</font></p>
+<p><font size="3" style="font-size: 12pt">6. Search “MaterialManager” and double click on the first option</font></p>
+<p><font size="3" style="font-size: 12pt">7. Scroll to line 1380. In this line you will find the code for all of the themes color configuration in rs. The code is in order of theme IDs (<a target="_blank" href="../../assets/|{–365/All_Theme_IDs_For_Edit.docx">Theme ID list</a>). It should look something like this:</font></p>
+<p style="font-weight: normal;line-height: 100%;background: #d1d1d1;padding: 10pt;border-radius: 10pt;width: min-content;white-space: nowrap;">
+	private static ColorSet[] colorSets = new ColorSet[]<br>
+	{<br>
+		new ColorSet(249, 183, 79, 250, 129, 48, 248, 183, 79, 248, 183, 79, 117, 207, 220, 117, 207, 220, 0, 124, 128, 206, 173, 79, 202, 253, 255, 0, 0, 0, 0.25f, 255, 255,<br>
+		255, 90, 255, 255, 55, 200, 255, 255, 47, 4, 255, 47, 4, 255, 255, 255, 255, 128, 0, 255, 0, 128, 255, 64, 64, 255, 0, 0, 139, 30, 0, 255, 255, 255, 107, 65, 65, 0, 0, 0,<br> 
+		231, 124, 114, 255, 255, 255, 0.3f, 0.1f, 5, 25),
+<p><font size="3" style="font-size: 10pt">(Theme 1 "Massif" color configuration)</font></p>
+<p><font size="3" style="font-size: 12pt">8. Search for the theme you want to change the color configuration. Right click the code and select "Edit Class (C#)" to edit it. 
+<a target="_blank" href="https://sqdldev.github.io/rolling-sky/colorsets/">Use this as a reference</a></font></p>
 <p><font size="3" style="font-size: 12pt">9. After you finish editing click compile</font></p>
 <p><font size="3" style="font-size: 12pt">10. Click on file &gt; Save all...</font></p>
 <p><font size="3" style="font-size: 12pt">11. Click OK</font></p>
